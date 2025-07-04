@@ -17,14 +17,13 @@
     "@mui/styled-engine-sc": "^7.1.1",
     "@tailwindcss/vite": "^4.1.11",
     "next-themes": "^0.4.6",
+    "radix-ui": "^1.4.2",
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-icons": "^5.5.0",
+    "react-router-dom": "^7.6.3",
     "styled-components": "^6.1.19",
-    "tailwindcss": "^4.1.11",
-
-     
-    "@mui/icons-material": "4.1.11"
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

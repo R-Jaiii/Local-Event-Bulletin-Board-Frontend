@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './Auth.css'
-import '../pages/Events.css';
-
+import '../Routes/Events.css';
+import { Field, Input } from "@chakra-ui/react"
+import Homepage from '../assets/Homepage';
 
 
 export default function Auth({ updateLocalStorage }) {
@@ -15,24 +16,33 @@ export default function Auth({ updateLocalStorage }) {
 	
 	const register = () => login ? null : (
         
-        <div className="register">
-			<input
+    <div className="register">
+		<Field.Root required>
+		<Field.Label>
+      	First Name <Field.RequiredIndicator />
+      	</Field.Label>
+				<Input
 				type="text"
 				value={firstName}
 				name="firstName"
 				id="firstName"
 				placeholder='Enter first name'
 				onChange={e => setFirstName(e.target.value)}
-			/>
-			<input
+				/>
+		<Field.Label>
+      	Last Name <Field.RequiredIndicator />
+     	</Field.Label>
+				<Input
 				type="text"
 				value={lastName}
 				name="lastName"
 				id="lastName"
 				placeholder='Enter last name'
 				onChange={e => setLastName(e.target.value)}
-			/>
-		</div>
+				/>
+		</Field.Root>
+			
+	</div>
 	)
 
 	const toggle = () => {
@@ -70,17 +80,18 @@ export default function Auth({ updateLocalStorage }) {
 	}
 
 
-	return (
-		<>
-		
+return (
+<>
+<Homepage />
 
-            <h1 className='auth-header'>{login ? "Login" : "Register"}</h1>
-			
-			
-			<form action="" className="form-wrapper">
-				{register()}
-                
-				<input 
+    <h1 className='auth-header'>{login ? "Login" : "Register"}</h1>
+	<form action="" className="form-wrapper">
+	{register()}
+        <Field.Root required>
+		<Field.Label>
+      	Email <Field.RequiredIndicator />
+      	</Field.Label>
+				<Input 
                     type="email" 
                     value={email} 
                     name="email" 
@@ -88,18 +99,24 @@ export default function Auth({ updateLocalStorage }) {
                     placeholder='Enter email' 
 					autoCorrect='on'
                     onChange={e => setEmail(e.target.value)}
-                />
-				<input type="password" 
+                	/>
+		<Field.HelperText>We'll never share your email.</Field.HelperText>
+
+		<Field.Label>
+      	Password <Field.RequiredIndicator />
+      	</Field.Label>
+					<Input type="password" 
                     value={password} 
                     name="pwd" 
                     id="pwd" 
                     placeholder='Enter password' 
                     onChange={e => setPassword(e.target.value)} 
-                />
-
-				<button onClick={handleSubmit}>Login</button>
-				<button onClick={toggle} type='button' className='logRegisterBtn'>{toggleBtn()}</button>
-			</form>
-		</>
-	)
-}
+               		 />
+		<Field.HelperText>We'll never share your password.</Field.HelperText>
+		</Field.Root>
+		
+	<button onClick={handleSubmit}>Login</button>
+	<button onClick={toggle} type='button' className='logRegisterBtn'>{toggleBtn()}</button>
+	</form>
+</>
+)}

@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Auth from './utils/Auth'
-import Events from './pages/Events'
-
- 
-
+import Events from './Routes/ScheduledEvents'
+import Navigation from './utils/Navigation'
 
 
 function App() {
@@ -38,9 +36,9 @@ function App() {
 
   return (
     <>
+    <Navigation />
       {handleView()}
       <button onClick={logout}>Logout</button>
-      
     </>
   )
 }

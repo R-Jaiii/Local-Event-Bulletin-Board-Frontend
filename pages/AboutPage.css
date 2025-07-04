@@ -1,0 +1,45 @@
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-intro {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #555;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    color:#333;
+  }
+  
+  ul,
+  ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: #1e88e5;
+    text-decoration: underline;
+  }
+  
+  .mission {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 40px;
+  }
+  

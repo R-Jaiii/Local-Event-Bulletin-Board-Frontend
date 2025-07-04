@@ -57,7 +57,11 @@ export default function CreateEvent({ sessionToken }) {
   return (
     <>
       <h2>Add New Event</h2>
-      <input
+      <Field.Root required>
+      <Field.Label>
+      Event <Field.RequiredIndicator />
+      </Field.Label>
+      <Input
         type="text"
         value={Title}
         name="Title"
@@ -65,7 +69,10 @@ export default function CreateEvent({ sessionToken }) {
         placeholder="Enter event name"
         onChange={e => setTitle(e.target.value)}
       />
-      <input
+      <Field.Label>
+      Description <Field.RequiredIndicator />
+      </Field.Label>
+      <Input
         type="text"
         value={Description}
         name="Description"
@@ -73,7 +80,10 @@ export default function CreateEvent({ sessionToken }) {
         placeholder="Enter event description"
         onChange={e => setDescription(e.target.value)}
       />
-      <input
+      <Field.Label>
+      Location <Field.RequiredIndicator />
+      </Field.Label>
+      <Input
         type="text"
         value={Location}
         name="Location"
@@ -82,6 +92,9 @@ export default function CreateEvent({ sessionToken }) {
         autoComplete="street-address"
         onChange={e => setLocation(e.target.value)}
       />
+      <Field.Label>
+      Date <Field.RequiredIndicator />
+      </Field.Label>
       <input
         type="date"
         value={DateInput}
@@ -89,6 +102,9 @@ export default function CreateEvent({ sessionToken }) {
         id="DateInput"
         onChange={e => setDateInput(e.target.value)}
       />
+      <Field.Label>
+      Time <Field.RequiredIndicator />
+      </Field.Label>
       <input
         type="time"
         value={TimeInput}
@@ -96,6 +112,9 @@ export default function CreateEvent({ sessionToken }) {
         id="TimeInput"
         onChange={e => setTimeInput(e.target.value)}
       />
+      <Field.Label>
+      Category <Field.RequiredIndicator />
+      </Field.Label>
       <select
         value={Category}
         onChange={e => setCategory(e.target.value)}
@@ -119,7 +138,9 @@ export default function CreateEvent({ sessionToken }) {
         <option value="Yard Sale">Yard Sale</option>
         <option value="Yoga Class">Yoga Clas</option>
       </select>
+      
       <button onClick={handleAddEvent}>ADD EVENT</button>
+      </Field.Root>
     </>
   );
 }
