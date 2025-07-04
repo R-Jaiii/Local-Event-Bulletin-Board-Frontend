@@ -1,27 +1,31 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import About from '../../pages/About'
 import Contact from '../../pages/Contact'
+import PrivacyPolicy from '../../pages/PrivacyPolicy'
+import TermsOfService from '../../pages/TermsOfService'
+import ReportPost from '../../pages/ReportPost';
+
 
 function Navigation() {
   return (
-    <>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+    <Router>
+        <nav className="navigation">
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul>
         </nav>
-        <Router>
-          <Routes>
-            <Route path="/" element={<h1>Friendly Fence Bulletin</h1>} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </Router>
-    </>
+
+    <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/report" element={<ReportPost />} />
+    </Routes>
+    </Router>
   )
 }
 
-export default Navigation
-
+export default Navigation;

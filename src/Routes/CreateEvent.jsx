@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Field, Input } from "@chakra-ui/react"
+import { Field, Input, FileUpload, Float } from "@chakra-ui/react"
+
 
 export default function CreateEvent({ sessionToken }) {
   const [Title, setTitle] = useState('');
@@ -8,6 +9,10 @@ export default function CreateEvent({ sessionToken }) {
   const [DateInput, setDateInput] = useState('');
   const [TimeInput, setTimeInput] = useState('');
   const [Category, setCategory] = useState('');
+
+
+
+
 
   const handleAddEvent = async (e) => {
     e.preventDefault();
@@ -72,14 +77,14 @@ export default function CreateEvent({ sessionToken }) {
       <Field.Label>
       Description <Field.RequiredIndicator />
       </Field.Label>
-      <Input
-        type="text"
+      <textarea
         value={Description}
         name="Description"
         id="Description"
         placeholder="Enter event description"
         onChange={e => setDescription(e.target.value)}
       />
+  
       <Field.Label>
       Location <Field.RequiredIndicator />
       </Field.Label>
@@ -92,6 +97,7 @@ export default function CreateEvent({ sessionToken }) {
         autoComplete="street-address"
         onChange={e => setLocation(e.target.value)}
       />
+
       <Field.Label>
       Date <Field.RequiredIndicator />
       </Field.Label>
@@ -102,6 +108,7 @@ export default function CreateEvent({ sessionToken }) {
         id="DateInput"
         onChange={e => setDateInput(e.target.value)}
       />
+
       <Field.Label>
       Time <Field.RequiredIndicator />
       </Field.Label>
@@ -112,6 +119,7 @@ export default function CreateEvent({ sessionToken }) {
         id="TimeInput"
         onChange={e => setTimeInput(e.target.value)}
       />
+
       <Field.Label>
       Category <Field.RequiredIndicator />
       </Field.Label>
@@ -136,7 +144,7 @@ export default function CreateEvent({ sessionToken }) {
         <option value="Town Hall">Town Hall</option>
         <option value="Workshop">Workshop</option>
         <option value="Yard Sale">Yard Sale</option>
-        <option value="Yoga Class">Yoga Clas</option>
+        <option value="Yoga Class">Yoga Class</option>
       </select>
       
       <button onClick={handleAddEvent}>ADD EVENT</button>

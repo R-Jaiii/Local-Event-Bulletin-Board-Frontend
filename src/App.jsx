@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import Auth from './utils/Auth'
-import Events from './Routes/ScheduledEvents'
+import Events from './routes/ScheduledEvents'
 import Navigation from './utils/Navigation'
+import LogOut from '@/utils/LogOut'
+import Footer from '../pages/Footer'
+
 
 
 function App() {
@@ -27,18 +30,15 @@ function App() {
       : <Events sessionToken={sessionToken} />
   }
 
-  const logout = () => {
-    if (localStorage.getItem("token")) {
-      localStorage.removeItem("token")
-      setSessionToken(undefined)
-    }
-  }
+
 
   return (
     <>
-    <Navigation />
+    
+      <Navigation />
       {handleView()}
-      <button onClick={logout}>Logout</button>
+      <LogOut />
+      <Footer />
     </>
   )
 }

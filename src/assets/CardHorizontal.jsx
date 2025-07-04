@@ -1,9 +1,9 @@
 import { Badge, Button, Card, Image, Text, Heading, Stack } from "@chakra-ui/react";
-import '../Routes/Events.css';
-import EditEvent from "@/Routes/EditEvent";
-import DeleteEvent from "@/Routes/DeleteEvent";
-import RSVPEvent from "@/Routes/RSVPEvent";
-import ShareEvent from "@/Routes/ShareEvent";
+import '../routes/Events.css';
+import EditEvent from "@/routes/EditEvent";
+import DeleteEvent from "@/routes/DeleteEvent";
+import RSVPEvent from "@/routes/RSVPEvent";
+import ShareEvent from "@/routes/ShareEvent";
 
 
 export const CardHorizontal = ({ events }) => (
