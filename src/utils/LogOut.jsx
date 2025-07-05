@@ -13,16 +13,19 @@ export default function LogOut() {
   const logout = () => {
     localStorage.removeItem("token");
     setSessionToken(undefined);
-    window.location.reload();
   };
   
   return (
     <div>
+      <p>Click the button below to log out.</p>
+      
       {sessionToken ? (
         <button onClick={logout}>Logout</button>
       ) : (
         <p>You are not logged in.</p>
+
       )}
     </div>
+
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Field, Input, FileUpload, Float } from "@chakra-ui/react"
+import { Field, Input } from "@chakra-ui/react"
 
 
 export default function CreateEvent({ sessionToken }) {

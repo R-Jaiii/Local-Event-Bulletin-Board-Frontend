@@ -1,5 +1,3 @@
-import { Field } from "@chakra-ui/react";
-
 export default function DeleteEvent({ events, sessionToken }) {
   const event = events; // Update this if you want to delete another event
   if (!event) {

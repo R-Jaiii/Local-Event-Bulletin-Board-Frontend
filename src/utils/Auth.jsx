@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Auth.css'
-import '../routes/Events.css';
 import { Field, Input } from "@chakra-ui/react"
 import Homepage from '../assets/Homepage';
 
@@ -21,7 +20,7 @@ export default function Auth({ updateLocalStorage }) {
           First Name <Field.RequiredIndicator />
         </Field.Label>
         <Input
-          type="text"
+          type="firstName"
           value={firstName}
           name="firstName"
           id="firstName"
@@ -32,7 +31,7 @@ export default function Auth({ updateLocalStorage }) {
           Last Name <Field.RequiredIndicator />
         </Field.Label>
         <Input
-          type="text"
+          type="lastName"
           value={lastName}
           name="lastName"
           id="lastName"

@@ -1,18 +1,30 @@
-import { Badge, Button, Card, Image, Text, Heading, Stack } from "@chakra-ui/react";
-import '../routes/Events.css';
-import EditEvent from "@/routes/EditEvent";
-import DeleteEvent from "@/routes/DeleteEvent";
-import RSVPEvent from "@/routes/RSVPEvent";
-import ShareEvent from "@/routes/ShareEvent";
+import { Badge, Button, Card, Image, Text, Heading, Stack, SimpleGrid, Box } from "@chakra-ui/react";
+import '../Routes/Events.css';
+import EditEvent from "@/Routes/EditEvent";
+import DeleteEvent from "@/Routes/DeleteEvent";
+import RSVPEvent from "@/Routes/RSVPEvent";
+import ShareEvent from "@/Routes/ShareEvent";
 
 
 export const CardHorizontal = ({ events }) => (
-  
-  <div className="card-horizontal">
+
+  <Box position="sticky" top="0" zIndex="sticky" boxShadow="sm" py={4} px={6}
+  _after={{ content: '""', position: "absolute", left: 0, right: 0, bottom: 0, height: "1px",
+  boxShadow: "0 1px 6px rgba(0, 0, 0, 0.1)",}}
+>
+  <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
+
     {events.map((event) => (
-      <Card.Root key={event._id} flexdirection="left" overflow="hidden" variant="outline" maxW="xl" mb={4}>
+
+      <Card.Root key={event._id}
+      bg="blackAlpha.700"
+      rounded="3xl"
+      overflow="hidden"
+      boxShadow="md"
+      transition="all 0.2s"
+      _hover={{ boxShadow: "xl", transform: "translateY(-2px)" }}>
+
         <Image
-        
           objectFit="cover"
           maxW="200px"
           src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?auto=format&fit=crop&w=800&q=60"
@@ -33,7 +45,7 @@ export const CardHorizontal = ({ events }) => (
           </Stack>
         </Card.Body>
         
-        <Card.Footer display="flex" justifyContent="space-between" p={4}>
+        <Card.Footer display="flex" justifyContent="space-between" >
           <Button onClick={() => RSVPEvent(event)} colorScheme="blue">RSVP</Button>
           <Button colorScheme="yellow" onClick={() => EditEvent(event._id)}>Edit</Button>
           <Button onClick={() => DeleteEvent(event)} colorScheme="red">Delete</Button>
@@ -42,7 +54,8 @@ export const CardHorizontal = ({ events }) => (
       </Card.Root>
     ))}
 <DeleteEvent />
-  </div>
+</SimpleGrid>
+</Box>
 );
 
 export default CardHorizontal;

@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Auth from './utils/Auth'
 import Events from './routes/ScheduledEvents'
-import Navigation from './utils/Navigation'
+import Navigation from './utils/NavBar'
 import LogOut from '@/utils/LogOut'
 import Footer from '../pages/Footer'
+import BackDrop from './utils/BackDrop'
 
 
 
@@ -34,8 +35,8 @@ function App() {
 
   return (
     <>
-    
       <Navigation />
+      <BackDrop />
       {handleView()}
       <LogOut />
       <Footer />
