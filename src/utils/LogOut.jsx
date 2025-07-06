@@ -17,12 +17,9 @@ export default function LogOut() {
   };
   
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setSessionToken(token);
-    }
-  }
-  , []);
+    logout;
+  },[]);
+
   return (
     <div>
       <p>Click the button below to log out.</p>
@@ -31,10 +28,7 @@ export default function LogOut() {
         <button onClick={logout}>Logout</button>
       ) : (
         <p>You are not logged in.</p>
-
       )}
-      
-      
     </div>
 
   );

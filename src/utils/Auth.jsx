@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Auth.css'
-import { Field, Input } from "@chakra-ui/react"
+import { Field, Input,Button, Card, Stack } from "@chakra-ui/react"
 import Homepage from '../assets/Homepage';
 
 
@@ -14,7 +14,16 @@ export default function Auth({ updateLocalStorage }) {
   const [password, setPassword] = useState("")
 
   const register = () => login ? null : (
-    <div className="register">
+    <Card.Root maxW="sm">
+      <Card.Header>
+      <Card.Title>Sign up</Card.Title>
+      <Card.Description>
+        Fill in the form below to create an account
+      </Card.Description>
+      </Card.Header>
+      <Card.Body>
+      <Stack gap="4" w="full">
+      <div className="register">
       <Field.Root required>
         <Field.Label>
           First Name <Field.RequiredIndicator />
@@ -40,6 +49,10 @@ export default function Auth({ updateLocalStorage }) {
         />
       </Field.Root>
     </div>
+      </Stack>
+    </Card.Body>
+    </Card.Root>
+    
   )
 
   const toggle = () => {

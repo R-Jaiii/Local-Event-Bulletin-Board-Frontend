@@ -7,10 +7,10 @@ import RSVPEvent from "@/Routes/RSVPEvent";
 import ShareEvent from "@/Routes/ShareEvent";
 
 
-export const CardHorizontal = ({ events }) => (
+export default function EventCard({ events }) {
 
-
-  <Box position="sticky" top="0" zIndex="sticky" boxShadow="sm" py={4} px={6}
+  return (
+    <Box position="sticky" top="0" zIndex="sticky" boxShadow="sm" py={4} px={6}
   _after={{ content: '""', position: "absolute", left: 0, right: 0, bottom: 0, height: "1px",
   boxShadow: "0 1px 6px rgba(0, 0, 0, 0.1)",}}
 >
@@ -28,7 +28,7 @@ export const CardHorizontal = ({ events }) => (
 
         <Image
           objectFit="cover"
-          maxW="200px"
+          maxW="auto"
           src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?auto=format&fit=crop&w=800&q=60"
           alt="Event Image"
         />
@@ -66,9 +66,9 @@ export const CardHorizontal = ({ events }) => (
         </Card.Footer>
       </Card.Root>
     ))}
+    
 <DeleteEvent />
 </SimpleGrid>
 </Box>
-);
-
-export default CardHorizontal;
+)
+}
