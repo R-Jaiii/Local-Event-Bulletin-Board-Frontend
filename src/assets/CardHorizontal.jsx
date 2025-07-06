@@ -1,4 +1,5 @@
 import { Badge, Button, Card, Image, Text, Heading, Stack, SimpleGrid, Box } from "@chakra-ui/react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '../Routes/Events.css';
 import EditEvent from "@/Routes/EditEvent";
 import DeleteEvent from "@/Routes/DeleteEvent";
@@ -7,6 +8,7 @@ import ShareEvent from "@/Routes/ShareEvent";
 
 
 export const CardHorizontal = ({ events }) => (
+
 
   <Box position="sticky" top="0" zIndex="sticky" boxShadow="sm" py={4} px={6}
   _after={{ content: '""', position: "absolute", left: 0, right: 0, bottom: 0, height: "1px",
@@ -46,10 +48,21 @@ export const CardHorizontal = ({ events }) => (
         </Card.Body>
         
         <Card.Footer display="flex" justifyContent="space-between" >
-          <Button onClick={() => RSVPEvent(event)} colorScheme="blue">RSVP</Button>
-          <Button colorScheme="yellow" onClick={() => EditEvent(event._id)}>Edit</Button>
-          <Button onClick={() => DeleteEvent(event)} colorScheme="red">Delete</Button>
-          <Button onClick={() => ShareEvent(event)} colorScheme="green">Share</Button>
+          <Router>
+            <Routes>
+              <Route path="/edit/:id" element={<EditEvent />} />
+              <Route path="/delete/:id" element={<DeleteEvent />} />
+              <Route path="/rsvp/:id" element={<RSVPEvent />} />
+              <Route path="/share/:id" element={<ShareEvent />} />
+            </Routes>
+          </Router>
+          <Button onClick={() => window.location.href = `/rsvp/${event._id}`} colorScheme="blue">RSVP</Button>
+
+
+      
+          <Button onClick={() => window.location.href = `/edit/${event._id}`} colorScheme="yellow">Edit</Button>
+          <Button onClick={() => window.location.href = `/delete/${event._id }`} colorScheme="red">Delete</Button>
+          <Button onClick={() => window.location.href = `/share/${event._id}`} colorScheme="green">Share</Button>
         </Card.Footer>
       </Card.Root>
     ))}

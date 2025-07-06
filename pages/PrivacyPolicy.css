@@ -3,19 +3,19 @@
     margin: 0 auto;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
-    color: #333;
+    color: white;
     line-height: 1.6;
   }
   
   .privacy-title {
     font-size: 2.5rem;
-    color: #333;
+    color: white;
     margin-bottom: 20px;
   }
   
   .privacy-intro {
     font-size: 1rem;
-    color: #555;
+    color: white;
     margin-bottom: 30px;
   }
   
@@ -26,7 +26,7 @@
   h2 {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    color: #333;
+    color: white;
   }
   
   ul {

@@ -23,11 +23,11 @@ export default function TermsOfService() {
 
       <section>
         <h2>2. User Responsibilities</h2>
-        <ul>
+        <ol>
           <li>You must not post anything illegal, offensive, or misleading.</li>
           <li>You are responsible for the accuracy of the content you share.</li>
           <li>You must not impersonate others or use false identities.</li>
-        </ul>
+        </ol>
       </section>
 
       <section>
@@ -35,11 +35,11 @@ export default function TermsOfService() {
         <p>
           We aim to keep our board clean, helpful, and respectful. We may remove or hide posts that:
         </p>
-        <ul>
+        <ol>
           <li>Include hate speech, spam, or scams</li>
           <li>Promote unsafe or illegal activity</li>
           <li>Don’t follow basic community standards</li>
-        </ul>
+        </ol>
       </section>
 
       <section>

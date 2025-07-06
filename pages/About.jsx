@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutPage.css';
+import './AboutPage.css'; // Import the CSS file
 
 export default function AboutPage() {
   return (
@@ -18,28 +18,29 @@ export default function AboutPage() {
 
       <section>
         <h2 className="section-title">What Is It?</h2>
-        <ul>
+        <ol>
           <li>🏷️ Yard sales and giveaways</li>
           <li>🐾 Lost & found pets</li>
           <li>🎉 Block parties and local events</li>
           <li>🧰 Services offered or needed</li>
           <li>📣 Neighborhood alerts and updates</li>
-        </ul>
+        </ol>
       </section>
 
       <section>
         <h2 className="section-title">Why We Built This</h2>
         <p>In an age of noisy feeds and spammy ads, we wanted something quieter, friendlier, and local. A space where people could:</p>
-        <ul>
+        <ol>
           <li>Communicate without clutter</li>
           <li>Find trustworthy, nearby information</li>
           <li>Strengthen the bonds within their own neighborhoods</li>
-        </ul>
+        </ol>
       </section>
 
       <section>
         <h2 className="section-title">How It Works</h2>
         <ol>
+          <li>Sign up with your email or Google account</li>
           <li>Browse your neighborhood’s board</li>
           <li>Post a bulletin — quick and free</li>
           <li>Stay connected with what matters locally</li>

@@ -1,11 +1,14 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import './App.css'
 import Auth from './utils/Auth'
+import AdminAuth from './utils/AdminAuth';
 import Events from './routes/ScheduledEvents'
 import Navigation from './utils/NavBar'
 import LogOut from '@/utils/LogOut'
-import Footer from '../pages/Footer'
-import BackDrop from './utils/BackDrop'
+import Footer from './utils/Footer'
+import BackDrop from './assets/BackDrop'
+
 
 
 
@@ -25,21 +28,31 @@ function App() {
     setSessionToken(newToken)
   }
 
-  const handleView = () => {
-    return !sessionToken
-      ? <Auth updateLocalStorage={updateLocalStorage} />
-      : <Events sessionToken={sessionToken} />
-  }
-
-
-
+  const MainView = () => {
+    if (!sessionToken) {
+      return (
+        <>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Auth updateLocalStorage={updateLocalStorage} />} />
+              <Route path="/admin" element={<AdminAuth updateLocalStorage={updateLocalStorage} />} />
+            </Routes>
+          </Router>
+        </>
+      );
+    } else {
+      return <Events sessionToken={sessionToken} />;
+    }
+  };
+  
+  
   return (
     <>
-      <Navigation />
-      <BackDrop />
-      {handleView()}
-      <LogOut />
-      <Footer />
+    <Navigation />
+    <BackDrop />
+    {MainView()}
+    <LogOut />
+    <Footer />
     </>
   )
 }

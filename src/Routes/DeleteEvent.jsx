@@ -1,4 +1,14 @@
-export default function DeleteEvent({ events, sessionToken }) {
+import React, { useEffect, useState } from "react";
+export default function DeleteEvent({ events }) {
+
+  const [sessionToken, setSessionToken] = useState(undefined)
+      console.log("Value of our session token", sessionToken)
+    useEffect(() => {
+      if (localStorage.getItem("token")) {
+        setSessionToken(localStorage.getItem("token"))
+      }
+
+    },[])
   const event = events; // Update this if you want to delete another event
   if (!event) {
     return <p>No event available to delete.</p>;
@@ -35,8 +45,7 @@ export default function DeleteEvent({ events, sessionToken }) {
 
   return (
     <>
-      <h2>Delete Event</h2>
-      <button onClick={handleDeleteEvent}>DELETE EVENT</button>
+      {handleDeleteEvent }
     </>
   );
 }

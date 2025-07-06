@@ -16,20 +16,20 @@ export default function PrivacyPolicy() {
 
       <section>
         <h2>1. Information We Collect</h2>
-        <ul>
+        <ol>
           <li><strong>Posts & Submissions:</strong> When you create a bulletin, we store your message, location (if included), and any contact info you provide.</li>
           <li><strong>Usage Data:</strong> We may collect non-identifying data like pages viewed or time spent on site to improve our service.</li>
           <li><strong>Optional Contact Info:</strong> If you choose to share your name or email, we’ll only use it for communication related to your post.</li>
-        </ul>
+        </ol>
       </section>
 
       <section>
         <h2>2. How We Use Your Information</h2>
-        <ul>
+        <ol>
           <li>To display bulletins on your local board</li>
           <li>To improve site features and performance</li>
           <li>To respond to reports or contact requests</li>
-        </ul>
+        </ol>
       </section>
 
       <section>
@@ -44,10 +44,10 @@ export default function PrivacyPolicy() {
 
       <section>
         <h2>5. Your Rights</h2>
-        <ul>
+        <ol>
           <li>You may request that we delete your posts or data</li>
           <li>You can contact us at <a href="mailto:privacy@friendlyfence.com">privacy@friendlyfence.com</a> with any questions</li>
-        </ul>
+        </ol>
       </section>
 
       <section>

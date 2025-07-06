@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Input } from "@chakra-ui/react";
 
-const StickyHeader = ({ searchTerm, setSearchTerm }) => (
+const Search = ({ searchTerm, setSearchTerm }) => (
   <Box
     position="sticky"
     top="0"
@@ -24,4 +24,4 @@ const StickyHeader = ({ searchTerm, setSearchTerm }) => (
   </Box>
 );
 
-export default StickyHeader;
+export default Search;

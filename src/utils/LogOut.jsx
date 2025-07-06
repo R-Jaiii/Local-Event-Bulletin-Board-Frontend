@@ -13,6 +13,7 @@ export default function LogOut() {
   const logout = () => {
     localStorage.removeItem("token");
     setSessionToken(undefined);
+    window.location.reload();
   };
   
   return (
@@ -25,6 +26,8 @@ export default function LogOut() {
         <p>You are not logged in.</p>
 
       )}
+      
+      
     </div>
 
   );

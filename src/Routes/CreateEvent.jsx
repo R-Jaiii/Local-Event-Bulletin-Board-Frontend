@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Field, Input } from "@chakra-ui/react"
 
-
 export default function CreateEvent({ sessionToken }) {
   const [Title, setTitle] = useState('');
   const [Description, setDescription] = useState('');
@@ -9,10 +8,6 @@ export default function CreateEvent({ sessionToken }) {
   const [DateInput, setDateInput] = useState('');
   const [TimeInput, setTimeInput] = useState('');
   const [Category, setCategory] = useState('');
-
-
-
-
 
   const handleAddEvent = async (e) => {
     e.preventDefault();

@@ -1,7 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import React from 'react';
 import './Footer.css';
-import { Link } from 'react-router-dom';
+import  Privacy from '/pages/PrivacyPolicy';
+import Terms from '/pages/TermsOfService';
+import Report from '/pages/ReportPost';
+
 
 
 export default function Footer() {
@@ -10,13 +13,19 @@ export default function Footer() {
       <div className="footer-inner">
         <p className="footer-logo">🪴 Friendly Fence Bulletin</p>
 
-        <nav className="footer-links">
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms of Service</a>
-          <a href="/report">Report a Post</a>
-        </nav>
+        <Router>
+          <Routes>
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/report" element={<Report />} />
+          </Routes>
+          <nav className="footer-links">
+          <a href='/' className="navbar-link">Home</a>
+          <a href='/privacy' className="navbar-link">Policy</a>
+          <a href='/terms' className="navbar-link">Terms of Service</a>
+          <a href='/report' className="navbar-link">Report a Post</a>
+          </nav>     
+        </Router>
         
         <p className="footer-address">
           123 Garden Lane, Green City, GC 45678
@@ -33,6 +42,7 @@ export default function Footer() {
           <a href="https://twitter.com/friendlyfence" target="_blank" rel="noopener noreferrer">Twitter</a>
           <a href="https://facebook.com/friendlyfence" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="https://instagram.com/friendlyfence" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://linkedin.com/company/friendlyfence" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>
 
         <p className="footer-copy">&copy; {new Date().getFullYear()} Friendly Fence Bulletin. All rights reserved.</p>
