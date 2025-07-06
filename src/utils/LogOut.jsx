@@ -16,6 +16,13 @@ export default function LogOut() {
     window.location.reload();
   };
   
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setSessionToken(token);
+    }
+  }
+  , []);
   return (
     <div>
       <p>Click the button below to log out.</p>
