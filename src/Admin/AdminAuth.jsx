@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Auth.css'
+import './Admin.css'
 import { Field, Input } from "@chakra-ui/react"
 import Homepage from '../assets/Homepage';
 

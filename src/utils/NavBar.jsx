@@ -30,7 +30,13 @@ export default function NavBar({ searchTerm, setSearchTerm  }) {
           <a href="./about" className="navbar-link">About</a>
           <a href="/contact" className="navbar-link">Contact</a>
           <a href="/admin" className="navbar-link">Admin Login</a>
-          
+          <div className="navbar-search">
+          <Input
+            placeholder="Search events..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
         </nav>
       </div>
 
@@ -39,16 +45,7 @@ export default function NavBar({ searchTerm, setSearchTerm  }) {
           <Route path="/About" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<AddEvents sessionToken={sessionToken} />} />
-          
-          
         </Routes>
-        <div className="navbar-search">
-          <Input
-            placeholder="Search events..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
       </Router>
     </header>
   );

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import CardHorizontal from '../assets/CardHorizontal';
 import './Events.css';
+import EventCard from '../assets/EventCard';
 
 
 
@@ -30,8 +30,9 @@ export default function Events({ sessionToken }) {
 
   return (
     <>
-    <CardHorizontal events={events} />
+    <EventCard events={events} />
     <button onClick={fetchEvents}>Refresh Events</button>
+    
     </>
   );
 }
