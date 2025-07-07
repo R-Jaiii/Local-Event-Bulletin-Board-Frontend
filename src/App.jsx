@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import './App.css'
-import Auth from '../auth-admin/Auth'
-import AdminAuth from '../auth-admin/AdminAuth';
+import Auth from './auth-admin/Auth'
+import AdminAuth from './auth-admin/AdminAuth';
 import Events from './eventControl/ScheduledEvents'
 import Navigation from './components/NavBar'
-import LogOut from '../auth-admin/LogOut'
+import LogOut from './auth-admin/LogOut'
 import Footer from './components/Footer'
 import BackDrop from './components/BackDrop'
-import SentReports from '../auth-admin/SentReports'
+import SentReports from './auth-admin/SentReports'
 
 
 function App() {
