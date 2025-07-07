@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './Auth.css'
+import '@/assets/Auth.css'
 import { Field, Input,Button, Card, Stack } from "@chakra-ui/react"
-import Homepage from '../assets/Homepage';
+import Homepage from '../src/components/Homepage';
 
 
 

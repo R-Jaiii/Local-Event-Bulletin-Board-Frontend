@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import React from 'react';
-import './Footer.css';
-import  Privacy from '/pages/PrivacyPolicy';
-import Terms from '/pages/TermsOfService';
-import Report from '/pages/ReportPost';
+import '@/assets/Footer.css';
+import  Privacy from '../pages/PrivacyPolicy';
+import Terms from '../pages/TermsOfService';
+import Report from '../pages/ReportPost';
 
 
 
-export default function Footer() {
+export default function Footer(sessionToken) {
+
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -17,7 +18,7 @@ export default function Footer() {
           <Routes>
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-            <Route path="/report" element={<Report />} />
+            <Route path="/report" element={<Report sessionToken={sessionToken}/>} />
           </Routes>
           <nav className="footer-links">
           <a href='/' className="navbar-link">Home</a>

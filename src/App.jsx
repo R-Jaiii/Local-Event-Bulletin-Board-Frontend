@@ -1,13 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import './App.css'
-import Auth from './utils/Auth'
-import AdminAuth from './Admin/AdminAuth';
-import Events from './routes/ScheduledEvents'
-import Navigation from './utils/NavBar'
-import LogOut from '@/utils/LogOut'
-import Footer from './utils/Footer'
-import BackDrop from './assets/BackDrop'
+import Auth from '../auth-admin/Auth'
+import AdminAuth from '../auth-admin/AdminAuth';
+import Events from './eventControl/ScheduledEvents'
+import Navigation from './components/NavBar'
+import LogOut from '../auth-admin/LogOut'
+import Footer from './components/Footer'
+import BackDrop from './components/BackDrop'
+import SentReports from '../auth-admin/SentReports'
 
 
 function App() {
@@ -29,27 +30,40 @@ function App() {
   const MainView = () => {
     if (!sessionToken) {
       return (
-        <>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Auth updateLocalStorage={updateLocalStorage} />} />
-              <Route path="/admin" element={<AdminAuth updateLocalStorage={updateLocalStorage} />} />
-            </Routes>
-          </Router>
-        </>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Auth updateLocalStorage={updateLocalStorage} />} />
+            <Route path="/admin" element={<AdminAuth updateLocalStorage={updateLocalStorage} />} />
+            <Route path="/events" element={<Events sessionToken={sessionToken} />} />
+          </Routes>
+        </Router>
       );
     } else {
       return <Events sessionToken={sessionToken} />;
     }
 
   };
+  // MainView function determines what to render based on sessionToken
+  // If sessionToken is undefined, it renders the Auth component
+  // If sessionToken is defined, it renders the Events component
+  // The Auth component is responsible for handling user authentication
+  // The AdminAuth component is responsible for handling admin authentication
+  // The Events component displays scheduled events for the user
+
+  const secondaryView = () => {
+    if (!sessionToken) {
+      return <Auth updateLocalStorage={updateLocalStorage} />;
+    } else {
+      return <Events sessionToken={sessionToken} />;
+    }
+  }
   
   return (
     <>
-    
+    <SentReports />
     <Navigation />
     <BackDrop />
-    {MainView()}
+    {MainView() || secondaryView()}
     <LogOut />
     <Footer />
     </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './TermsOfService.css';
+import '@/assets/TermsOfService.css';
 
 export default function TermsOfService() {
   return (

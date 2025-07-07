@@ -96,7 +96,7 @@ export default function CreateEvent({ sessionToken }) {
       <Field.Label>
       Date <Field.RequiredIndicator />
       </Field.Label>
-      <input
+      <Input
         type="date"
         value={DateInput}
         name="DateInput"
@@ -107,7 +107,7 @@ export default function CreateEvent({ sessionToken }) {
       <Field.Label>
       Time <Field.RequiredIndicator />
       </Field.Label>
-      <input
+      <Input
         type="time"
         value={TimeInput}
         name="TimeInput"

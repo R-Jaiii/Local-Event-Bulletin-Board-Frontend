@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Input } from "@chakra-ui/react";
 import { useState, useEffect } from 'react';
-import './NavBar.css';
-import About from '/pages/About';
-import Contact from '/pages/Contact';
-import AddEvents from '@/routes/CreateEvent';
+import '@/assets/NavBar.css';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
+import AddEvents from '@/eventControl/CreateEvent';
 
 
 

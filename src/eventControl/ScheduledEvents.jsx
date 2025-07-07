@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import './Events.css';
-import EventCard from '../assets/EventCard';
+import '@/assets/Events.css';
+import EventCard from '../components/EventCard';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './BackDrop.css'
+import '@/assets/BackDrop.css'
 
 export default function BackDrop() {
   return (

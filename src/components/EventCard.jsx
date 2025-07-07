@@ -1,10 +1,10 @@
 import { Badge, Button, Card, Image, Text, Heading, Stack, SimpleGrid, Box } from "@chakra-ui/react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import '../Routes/Events.css';
-import EditEvent from "@/Routes/EditEvent";
-import DeleteEvent from "@/Routes/DeleteEvent";
-import RSVPEvent from "@/Routes/RSVPEvent";
-import ShareEvent from "@/Routes/ShareEvent";
+import '@/assets/EventCard.css';
+import EditEvent from "@/eventControl/EditEvent";
+import DeleteEvent from "@/eventControl/DeleteEvent";
+import RSVPEvent from "@/eventControl/RSVPEvent";
+import ShareEvent from "@/eventControl/ShareEvent";
 
 
 export default function EventCard({ events }) {
@@ -66,8 +66,6 @@ export default function EventCard({ events }) {
         </Card.Footer>
       </Card.Root>
     ))}
-    
-<DeleteEvent />
 </SimpleGrid>
 </Box>
 )

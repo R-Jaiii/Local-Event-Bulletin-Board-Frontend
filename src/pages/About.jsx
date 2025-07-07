@@ -1,5 +1,4 @@
-import React from 'react';
-import './AboutPage.css'; // Import the CSS file
+import '@/assets/AboutPage.css'; // Import the CSS file
 
 export default function AboutPage() {
   return (
